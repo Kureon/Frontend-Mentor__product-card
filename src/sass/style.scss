@@ -176,7 +176,7 @@ body {
   transition: all ease-in-out .3s;
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
   background-color: hsl(158, 36%, 17%);
   cursor: pointer;
 }
