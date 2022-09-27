@@ -161,6 +161,8 @@ body {
   color: var(--crl-neutral-light)
 }
 
+// BUTTON //////////
+
 .btn {
   display: flex;
   align-items: center;
@@ -191,6 +193,8 @@ i.cart {
   background-repeat: no-repeat;
   background-position: bottom;
 }
+
+// MEDIA QUERIES //////////
 
 @media (max-width: 960px) {
   .card {
