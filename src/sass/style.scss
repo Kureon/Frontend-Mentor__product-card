@@ -78,64 +78,139 @@ select {
 
 // COLORS   //////////
 
-// :root {
-
-// }
+:root {
+  --clr-primary: hsl(158, 36%, 37%);
+  --clr-secondary: hsl(30, 38%, 92%);
+  --clr-neutral-dark: hsl(212, 21%, 14%);
+  --crl-neutral-light: hsl(228, 12%, 48%);
+  --clr-white: hsl(0, 0%, 100%);
+}
 
 // LAYOUT //////////
+
 body {
   display: flex;
   align-items: center;
+
+  color: var(--crl-neutral-light);
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--clr-secondary);
 }
+
+// CARD //////////
 
 .card {
   display: flex;
   width: 40em;
   margin: 0 auto;
 
+  background-color: var(--clr-white);
+  border-radius: 10px;
+  overflow: hidden;
+
+  transition: all ease-in-out .2s;
+
   picture {
     width: 20em;
+    overflow: hidden;
+
+    img {
+      transition: all ease-in-out .5s;
+    }
+    img:hover {
+      transform: scale(1.1);
+    }
   }
 }
 
 .card-content {
   width: 20em;
-  padding: 1.5em 2em;
+  padding: 2em;
 }
 .card-category {
+  padding-bottom: 1em;
+
   font-size: 1rem;
-  text-transform: uppercase;      
+  text-transform: uppercase; 
+  letter-spacing: 5px;
 }
 .card-title {
-  font-size: 2.5rem;
+  padding-bottom: 0.75em;
+
+  font-size: 2.3rem;
+  font-family: 'Fraunces', serif;
   line-height: 1em;
-  padding-bottom: 1em;
+  color: var(--clr-neutral-dark);
 }
 .card-text {
   padding-bottom: 1em;
 }
 .price {
-  font-size: 1.25rem;
+  display: inline-block;
+  padding-bottom: 1em; 
+  font-size: 2rem;
+  font-family: 'Fraunces', serif;
+  color: var(--clr-primary);
 }
 .price-old {
+  margin-left: 1em;
+  vertical-align: middle;
   font-size: 0.8rem;
+  font-family: unset;
+  text-decoration: line-through;
+  color: var(--crl-neutral-light)
 }
 
 .btn {
-  display:inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.5em 1em;
+  width: 100%;
+
+  color: var(--clr-white);
+  background-color: var(--clr-primary);
+  border: none;
+  border-radius: 10px;
+
+  transition: all ease-in-out .3s;
+}
+
+.btn:hover {
+  background-color: hsl(158, 36%, 17%);
+  cursor: pointer;
 }
 
 i.cart {
+  display: inline-block;
+  margin-right: 0.75em;
+  width: 16px;
+  height: 16px;
+
   background-image: url("../assets/images/icon-cart.svg");
   background-repeat: no-repeat;
-  width: 24px;
-  height: 24px;
+  background-position: bottom;
 }
 
 @media (max-width: 960px) {
   .card {
     flex-direction: column;
     width: 20em;
+  }
+  .card-category {
+    font-size: 0.65rem;
+  }
+  .card-title {
+    font-size: 1.8rem;
+  }
+  .card-text {
+    font-size: 0.76rem;
+  }
+  .price {
+    font-size: 1.7rem;
+  }
+  .price-old, 
+  .btn {
+    font-size: 0.8rem;
   }
 }
